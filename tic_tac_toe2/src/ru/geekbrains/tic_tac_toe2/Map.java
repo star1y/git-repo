@@ -20,21 +20,7 @@ public class Map extends JPanel {
     private void mouseReleased(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        int xCell;
-        int yCell;
-        int a = getWidth();
-        if (x <= a) {
-            if (x < a / 3) xCell = 1;
-            else if (x < a / 1.5) xCell = 2;
-            else xCell = 3;
-        } else xCell = 0;
-        if (y <= a) {
-            if (y < a / 3) yCell = 1;
-            else if (y < a / 1.5) yCell = 2;
-            else yCell = 3;
-        } else yCell = 0;
-
-        System.out.println("x = " + xCell + " y = " + yCell);
+        cellCoordinate(x, y);
     }
 
     public static void startNewGame() {
@@ -51,6 +37,23 @@ public class Map extends JPanel {
         g.drawLine((int) (a / 1.5), 0, (int) (a / 1.5), a);
         g.drawLine(0, a / 3, a, a / 3);
         g.drawLine(0, (int) (a / 1.5), a, (int) (a / 1.5));
+    }
+
+    protected void cellCoordinate (int x, int y) {
+        int xCell;
+        int yCell;
+        int a = getWidth();
+        if (x <= a) {
+            if (x < a / 3) xCell = 1;
+            else if (x < a / 1.5) xCell = 2;
+            else xCell = 3;
+        } else xCell = 0;
+        if (y <= a) {
+            if (y < a / 3) yCell = 1;
+            else if (y < a / 1.5) yCell = 2;
+            else yCell = 3;
+        } else yCell = 0;
+        System.out.println("x = " + xCell + " y = " + yCell);
     }
 
 }
