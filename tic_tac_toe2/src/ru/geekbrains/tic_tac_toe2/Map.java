@@ -20,6 +20,25 @@ public class Map extends JPanel {
     private void mouseReleased(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
+        cellCoordinate(x, y);
+    }
+
+    public static void startNewGame() {
+        System.out.println("Вызывается метод startNewGame");
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.ORANGE);
+        int a = getWidth();
+        g.drawLine(a / 3, 0, a / 3, a);
+        g.drawLine((int) (a / 1.5), 0, (int) (a / 1.5), a);
+        g.drawLine(0, a / 3, a, a / 3);
+        g.drawLine(0, (int) (a / 1.5), a, (int) (a / 1.5));
+    }
+
+    private void cellCoordinate (int x, int y) {
         int xCell;
         int yCell;
         int a = getWidth();
@@ -33,24 +52,7 @@ public class Map extends JPanel {
             else if (y < a / 1.5) yCell = 2;
             else yCell = 3;
         } else yCell = 0;
-
         System.out.println("x = " + xCell + " y = " + yCell);
-    }
-
-    public static void startNewGame() {
-        System.out.println("Вызывается метод startNewGame");
-    }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-
-        g.setColor(Color.ORANGE);
-        int a = getWidth();
-        g.drawLine(a / 3, 0, a / 3, a);
-        g.drawLine((int) (a / 1.5), 0, (int) (a / 1.5), a);
-        g.drawLine(0, a / 3, a, a / 3);
-        g.drawLine(0, (int) (a / 1.5), a, (int) (a / 1.5));
     }
 
 }
