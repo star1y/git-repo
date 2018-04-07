@@ -30,7 +30,6 @@ public class Map extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         g.setColor(Color.ORANGE);
         int a = getWidth();
         g.drawLine(a / 3, 0, a / 3, a);
@@ -39,7 +38,7 @@ public class Map extends JPanel {
         g.drawLine(0, (int) (a / 1.5), a, (int) (a / 1.5));
     }
 
-    protected void cellCoordinate (int x, int y) {
+    private void cellCoordinate (int x, int y) {
         int xCell;
         int yCell;
         int a = getWidth();
