@@ -39,7 +39,7 @@ public class GameWindow extends JFrame implements ActionListener {
         Map map = new Map();
         add(map, BorderLayout.CENTER);
 
-        setResizable(true);
+        setResizable(false);
         setVisible(true);
     }
 
